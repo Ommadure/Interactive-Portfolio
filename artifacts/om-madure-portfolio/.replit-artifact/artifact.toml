@@ -1,0 +1,28 @@
+kind = "web"
+previewPath = "/"
+title = "Om Madure — Portfolio"
+description = "An interactive developer portfolio for frontend developer Om Madure, showcasing professional experience, skills, and three production projects with accessible motion, theme controls, and project detail pages."
+version = "1.0.0"
+id = "artifacts/om-madure-portfolio"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 22610
+
+[services.development]
+run = "pnpm --filter @workspace/om-madure-portfolio run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/om-madure-portfolio", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/om-madure-portfolio/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "22610"
+BASE_PATH = "/"

@@ -1,0 +1,347 @@
+# PROJECT BRIEF: Interactive Developer Portfolio for Om Madure
+
+You are building a production-quality, highly interactive, performance-optimized portfolio website for a frontend developer. Follow this specification exactly. DO NOT invent content, metrics, links, testimonials, company names, or project details that are not given below. If something is missing, use the clearly-marked placeholder rules in Section 12. Do not ask me questions; make reasonable choices only where this spec leaves visual details open, and keep to the constraints stated.
+
+---
+
+## 1. GOAL AND AUDIENCE
+
+- Purpose: personal portfolio that makes recruiters, hiring managers, and other frontend developers immediately see strong UI engineering skill.
+- The site itself is a proof of skill: smooth animation, 3D, accessibility, and excellent performance must all be visible and real.
+- It must be data-driven and customizable: ALL personal content lives in typed data files so I can edit text, projects, skills, and theme without touching components (see Section 5).
+- Visitors must be able to open each deployed project directly from the portfolio, and view the portfolio's own source code on GitHub.
+
+---
+
+## 2. TECH STACK (FIXED, DO NOT SUBSTITUTE)
+
+- Framework: Vite + React 18 + TypeScript (strict mode on)
+- Styling: Tailwind CSS with CSS variables for theme tokens
+- Animation: Framer Motion (UI/page/scroll animations)
+- 3D: three.js via @react-three/fiber and @react-three/drei (lazy-loaded only)
+- Smooth scroll: Lenis (optional toggle, disabled when prefers-reduced-motion)
+- Routing: react-router-dom (routes: `/` home, `/projects/:slug` project detail, `*` not-found)
+- State: React Context + useReducer for UI state (theme, reduced-motion override, 3D on/off, command palette). No Redux needed.
+- Icons: lucide-react
+- Fonts: self-hosted or Google Fonts "Space Grotesk" (headings) and "Inter" (body) with font-display: swap and fallback stacks
+- No UI kit libraries (no MUI, Chakra, etc.). Components are custom.
+- No backend. Contact form uses a `mailto:` fallback plus a pluggable handler (see Section 9).
+
+---
+
+## 3. PERSONAL CONTENT (USE VERBATIM)
+
+**Name:** Om Madure
+**Title:** Frontend Developer
+**Location:** Solapur, Maharashtra, India
+**Email:** ommadure7@gmail.com
+**LinkedIn:** https://linkedin.com/in/om-madure
+**GitHub profile:** https://github.com/OmMadure
+**Portfolio source code repository:** https://github.com/Ommadure/Portfolio_fullstack
+
+**Summary:**
+Frontend Developer with 9 months of professional experience building and optimizing production web applications using React.js, TypeScript, JavaScript, HTML5, and CSS3. Worked across 4 applications, including 3 in-house products and 1 real-time application used daily by students. Contributed to approximately 30+ reusable React components with a focus on reducing UI complexity, improving frontend infrastructure, performance, and user experience. Experienced in REST API integration, responsive design, accessibility, code optimization, Figma-to-code workflows, PR reviews, and Next.js concepts including server-side rendering and built-in routing.
+
+**Hero tagline (short):** "I build fast, accessible, and delightful interfaces."
+
+**Headline stats (animated count-up in the hero or About section):**
+- 9 months professional experience
+- 4 production applications
+- 30+ reusable React components
+- 9.1 / 10 CGPA
+
+### Experience
+**Frontend Developer** — Test Yantra Software Solutions Pvt. Ltd., Bangalore, India — August 2025 to April 2026
+- Contributed to 4 production applications, including 3 in-house applications and 1 real-time student-facing application used daily, developing and optimizing React.js interfaces for responsive and reliable user experiences.
+- Built and optimized approximately 30+ reusable React components, reducing UI complexity, improving component maintainability, and creating a stronger frontend infrastructure for feature development.
+- Refactored frontend implementation and component patterns to reduce unnecessary complexity and improve code quality, maintainability, and consistency across application features.
+- Served as a PR checker for the team, reviewing pull requests before merge to identify faulty, duplicated, or unoptimized code and helping maintain frontend quality standards.
+- Collaborated with backend and DevOps teams to identify application latency issues, improve frontend-backend interactions, and enhance overall application responsiveness and user experience.
+- Worked with REST APIs using Axios/Fetch and implemented reliable loading, empty, and error states for data-driven React interfaces.
+- Explored Next.js for server-side rendering, built-in routing, and application architecture, evaluating its use for landing pages and features where framework-level routing could replace third-party dependencies.
+- Converted Figma designs and UX requirements into responsive, accessible interfaces using semantic HTML, CSS, reusable React components, and cross-browser development practices.
+
+### Education
+- Bachelor of Technology, Minor in Internet of Things (IoT), 2025 — Walchand Institute of Technology, Solapur, Maharashtra — CGPA 9.1/10
+
+### Certifications
+- Git and GitHub — Udemy (2025)
+- AWS Cloud Practitioner Essentials (2024)
+- Microsoft Azure Fundamentals (2024)
+
+### Skills (group exactly like this)
+- **Languages:** JavaScript (ES6+), TypeScript, HTML5, CSS3, SASS/SCSS, SQL
+- **Frontend:** React.js, Next.js, Redux Toolkit, Axios, Tailwind CSS, Framer Motion, Responsive Design, Component Architecture, DOM Manipulation, Event Handling
+- **UI Engineering:** Flexbox, CSS Grid, Semantic HTML, Accessibility, WCAG, ARIA, SEO, Cross-Browser Compatibility, Design Systems, Reusable Components
+- **Performance:** Core Web Vitals, Lazy Loading, Code Splitting, Image Optimization, Caching, Debouncing, Frontend Optimization
+- **Tools:** Git, GitHub, GitHub Actions, npm, Vite, Webpack, Chrome DevTools, Postman, VS Code, Vercel
+- **Backend/API:** REST APIs, FastAPI, PostgreSQL, Supabase, SQL, Redis
+- **AI/Cloud:** Gemini, GitHub Copilot, ChatGPT, Claude, AWS Cloud Practitioner, Microsoft Azure Fundamentals
+
+### Projects (3 total; each gets a card AND a detail page)
+
+**1. DevFlow — Full-Stack Developer Productivity Dashboard**
+- Slug: `devflow`
+- Tech: React 19, TypeScript, FastAPI, Python 3.12, PostgreSQL, pgvector, Redis, Docker, GitHub Actions, Vercel, Oracle Cloud
+- Live URL: NOT DEPLOYED YET. Leave `links.live` undefined and render the "deployment coming soon" slot described in Section 4.
+- Highlights:
+  - Designed and shipped a developer productivity platform with reusable React 19 and TypeScript interfaces for snippets, markdown notes, semantic search, AI workflows, GitHub analytics, and HTTP API testing.
+  - Built accessible, responsive UI components using semantic HTML, keyboard navigation, ARIA attributes, route-level code splitting, and lazy loading to improve maintainability and frontend performance.
+  - Integrated React workflows with FastAPI REST APIs and implemented authentication, loading, empty, error, and cancellation states for data-driven interactions.
+  - Structured frontend state with Redux Toolkit and connected the UI to PostgreSQL-backed application services while maintaining clear separation between presentation and data concerns.
+  - Implemented AI-assisted product workflows with streaming Server-Sent Events and provider-backed APIs, including frontend handling for progressive responses and client disconnects.
+
+**2. ReviewPilot — AI-Powered GitHub Pull Request Review Platform**
+- Slug: `reviewpilot`
+- Tech: GitHub App, Python, FastAPI, PostgreSQL, LLMs, Vercel, Oracle Cloud, Gemini
+- Live URL: https://reviewpilot-om.vercel.app
+- Highlights:
+  - Built the dashboard interface for an AI-powered GitHub pull request review platform that analyzes code changes, surfaces inline review feedback, and tracks review-quality metrics.
+  - Developed reusable UI patterns for review results, status states, metrics, and developer feedback while integrating frontend workflows with backend APIs.
+  - Designed frontend handling for asynchronous review processing, loading states, validation feedback, and long-running AI-generated results.
+  - Supported a review engine evaluated against 31 labeled pull requests, with production review latency targeted below 60 seconds.
+
+**3. HireMyTalent — Actors Booking Marketplace**
+- Slug: `hiremytalent`
+- Tech: Next.js 16, TypeScript, FastAPI, SQLAlchemy 2.0, PostgreSQL 16, Vercel Blob, JWT, GitHub Actions
+- Live URL: https://actors.hiremytalent.in
+- Highlights:
+  - Built a high-fidelity talent marketplace frontend using Next.js 16, TypeScript, Server Components, and Server Actions for talent discovery, profiles, applications, messaging, booking, and project tracking.
+  - Implemented an environment-aware avatar processing workflow with Sharp and Vercel Blob, supporting 800x800 WebP output, local fallback, content-type validation, and 5 MB upload limits.
+  - Designed Next.js caching and targeted revalidation for talent discovery and public profiles, balancing UI freshness with frontend performance.
+  - Implemented PostgreSQL-backed full-text search with faceted filters and cursor-based pagination through API integrations, enabling scalable talent discovery.
+  - Built role-aware navigation and protected application flows using JWT/email-verification state while maintaining consistent responsive UI behavior.
+
+Per-project GitHub repository links are NOT provided for any of the three projects: apply Section 12 placeholder rules. Screenshots are NOT provided for any project: apply Section 12 placeholder rules.
+
+---
+
+## 4. PAGE STRUCTURE (SINGLE-PAGE HOME + PROJECT DETAIL ROUTES)
+
+Home (`/`) sections in this order, each with an anchor id and a nav link:
+1. **Hero** — name, title, tagline, two buttons ("View Projects" scrolls to Projects; "Download Resume" links to `/resume.pdf` placeholder file), social icon links (GitHub, LinkedIn, Email), animated stat counters, and the 3D hero scene (Section 7) on the right (desktop) or behind/below text (mobile).
+2. **About** — summary text, location, education, certifications as small badges, and a "View source code" link (GitHub icon) pointing to the portfolio source repository from profile.ts.
+3. **Skills** — grouped skill categories (Section 3). Interactive: category tabs or filter chips; skill chips animate in with stagger; hovering a chip lifts it with a subtle glow. Include the interactive 3D skill sphere (Section 7) as an optional enhancement toggled on desktop only.
+4. **Experience** — vertical timeline with the Test Yantra role. Scroll-linked line draw; bullets reveal on scroll.
+5. **Projects** — filterable grid (filter by tech tag, "All" default). Cards have tilt-on-hover (3D CSS perspective), spotlight/gradient border following the cursor, tech chips, and a "View details" button routing to `/projects/:slug`. Layout animation (Framer Motion `layout`) when filters change. Each card also shows a deployment slot (see "Deployment link behavior" below).
+6. **Contact** — email, GitHub, LinkedIn, and a contact form (Section 9).
+7. **Footer** — name, copyright year (computed), back-to-top button, link to GitHub profile, and a "View source" link to the portfolio source repository.
+
+### Deployment link behavior (applies to project cards AND project detail pages)
+Driven entirely by `links.live` in `projects.ts`:
+- If `links.live` is set (HireMyTalent, ReviewPilot): render a prominent "Live demo" button with an external-link icon. It opens in a new tab with `target="_blank"` and `rel="noopener noreferrer"`, and has an accessible label like "Open ReviewPilot live demo (opens in a new tab)". On the card, also show a small green pulsing "Live" status dot (CSS transform/opacity animation only, disabled under reduced motion). Show the bare domain as small secondary text (e.g. `actors.hiremytalent.in`), derived from the URL by a util function, not hardcoded.
+- If `links.live` is NOT set (DevFlow today): render a small, visually quiet, non-interactive badge reading "Deployment coming soon" (muted color, dashed border, clock icon) in the exact same position and approximate size as the Live demo button so there is no layout shift when it is later replaced. It must NOT be a link or a disabled-looking button. Add a short code comment in `projects.ts` above DevFlow: `// TODO: add live URL here once DevFlow is deployed`.
+- The moment a URL is added to `links.live`, the badge must automatically become the "Live demo" button with no other code change.
+- Never render a "Live demo" button with an empty or placeholder URL.
+
+Project detail page (`/projects/:slug`): title, tech chips, all highlights as an animated list, a links area that follows the deployment link behavior above (plus GitHub link only if `links.github` exists; otherwise a quiet "Source link coming soon" badge), a screenshot gallery area (placeholders), "Next project" and "Back to all projects" buttons. Unknown slug shows the 404 page.
+
+Global UI:
+- Sticky, blurred-glass navbar with scroll-spy (active section highlights), theme toggle, and a mobile hamburger drawer (focus-trapped, Esc closes).
+- Scroll progress bar at the top (thin gradient line).
+- Custom cursor follower on desktop pointer devices only (small dot + ring that scales on interactive elements). Never on touch devices. Must not hide the native cursor on text inputs.
+- Command palette (Ctrl/Cmd+K): lists sections, projects, "Open live demo" entries for projects that have a live URL, theme toggle, the portfolio source repo, and external links; keyboard navigable; accessible dialog.
+- Dark theme default, with a light theme. Persist choice in localStorage and respect `prefers-color-scheme` on first visit.
+- A small "Performance mode" toggle in the navbar menu that disables 3D, the custom cursor, and heavy effects (see Section 8).
+
+---
+
+## 5. CUSTOMIZATION ARCHITECTURE (CRITICAL)
+
+All editable content must live in `/src/data/` as typed TypeScript files; components never contain hardcoded personal text or URLs.
+
+- `/src/data/profile.ts` — name, title, tagline, summary, location, email, social links (`github`, `linkedin`), `sourceRepo` (portfolio source code URL), resume path, stats array.
+- `/src/data/projects.ts` — array of `Project` objects: `{ slug, title, subtitle, techStack: string[], highlights: string[], links: { live?: string, github?: string }, images: string[], featured: boolean, accentColor: string }`.
+- `/src/data/skills.ts` — array of `{ category: string, items: string[] }`.
+- `/src/data/experience.ts` — array of `{ role, company, location, startDate, endDate, bullets: string[] }`.
+- `/src/data/education.ts` and `/src/data/certifications.ts`.
+- `/src/config/theme.ts` — accent colors, gradient definitions, and animation durations as a single config; applied as CSS variables on `:root`.
+- `/src/config/features.ts` — boolean flags: `enable3D`, `enableCustomCursor`, `enableSmoothScroll`, `enableCommandPalette`, `enableSkillSphere`.
+- `/src/types/index.ts` — all shared TypeScript interfaces.
+
+Adding a new project must require ONLY adding one object to `projects.ts`: the grid, filters, detail route, deployment link behavior, command palette entry, and sitemap list must all update automatically. Setting DevFlow's `links.live` later must require changing exactly one line. Include a `README.md` documenting exactly how to add/edit a project, add a live URL to a project, change the accent color, and toggle features.
+
+---
+
+## 6. VISUAL DESIGN DIRECTION
+
+- Style: modern, premium, developer-centric. Dark background (near-black navy, e.g. #0a0a12), subtle noise/grain overlay (CSS only, very low opacity), glassmorphism cards (backdrop-blur with 1px translucent border), gradient accents (cyan → violet by default, configurable in theme.ts).
+- Typography scale: fluid with `clamp()`. Hero name very large, bold, Space Grotesk.
+- Spacing: consistent 8px scale; max content width 1200px; generous section padding.
+- Contrast: all text meets WCAG AA in both themes.
+- Responsive breakpoints: 360, 768, 1024, 1440. Must look intentional at each, with no horizontal scroll at any width.
+
+---
+
+## 7. 3D ELEMENTS (react-three-fiber, LAZY-LOADED)
+
+Implement exactly these three, each in its own lazily-loaded component (`React.lazy` + `Suspense`, with a lightweight CSS skeleton fallback):
+
+1. **Hero scene** — a floating, slowly rotating low-poly icosahedron/torus-knot cluster with a wireframe + gradient material, 2–3 smaller orbiting shapes, soft ambient + directional lighting. It reacts to mouse movement (parallax rotation, damped with lerp) and to scroll (slight scale/position shift). Use `drei` helpers like `Float` and `Environment` only if they don't hurt load; prefer simple materials.
+2. **Skill sphere (desktop only, optional flag)** — a rotating sphere of skill-name labels (HTML via drei `Html` or sprite text) that can be dragged to rotate and slows on hover. Limit to ~25 labels (top skills from the Frontend and Languages groups).
+3. **Contact section accent** — a small, low-cost 3D object (e.g. a floating envelope-like or low-poly planet shape) that gently rotates.
+
+3D performance rules (non-negotiable):
+- Canvas settings: `dpr={[1, 1.5]}`, `frameloop="demand"` where the scene is static-ish or `"always"` only while the canvas is in the viewport; pause rendering when off-screen using IntersectionObserver.
+- Pause rendering when the tab is hidden (`document.visibilityState`).
+- Use `useFrame` with delta-based motion, no per-frame object allocation, reuse geometries/materials via `useMemo`.
+- Keep polygon counts low (<5k triangles per scene), no heavy textures, no external model files, no HDR files. Generate geometry procedurally.
+- Dispose of geometries/materials on unmount.
+- Do not mount 3D at all on: devices with `navigator.hardwareConcurrency <= 2`, `prefers-reduced-motion: reduce`, `saveData` enabled, WebGL unsupported, or when Performance mode is on. In those cases render a static CSS gradient/SVG fallback of the same dimensions (no layout shift).
+- Wrap each Canvas in an Error Boundary that falls back to the static visual.
+- On screens below 768px, render a reduced version (fewer shapes) of the hero scene only; no skill sphere.
+
+---
+
+## 8. ANIMATION AND INTERACTION SPEC
+
+Use Framer Motion with shared variants in `/src/animations/variants.ts` and shared durations/easings from theme config. Animate ONLY `transform` and `opacity` wherever possible; never animate `width`, `height`, `top`, `left`, or box-shadow blur in loops.
+
+Required effects:
+- **Page load:** short staggered hero reveal (name letters or words slide up with mask, then subtitle, buttons, stats). Total under 1.2 s.
+- **Scroll reveal:** sections and cards fade-up once using `whileInView` with `viewport={{ once: true, margin: "-80px" }}`.
+- **Stat counters:** count up once when visible (requestAnimationFrame-based or Framer `animate`), final values from profile.ts.
+- **Timeline:** scroll-linked line draw using `useScroll` + `useTransform` on the experience section.
+- **Project cards:** pointer-based 3D tilt (max ~8°) using `useMotionValue`/`useSpring` (no React state updates on mousemove), cursor-following spotlight via CSS variables set from a rAF-throttled handler, smooth lift on hover.
+- **Project filter:** `AnimatePresence` + `layout` transitions.
+- **Page transitions** between home and project detail: fade + slight slide, 250–350 ms. Restore scroll position when returning to home.
+- **Magnetic buttons:** primary CTAs (including "Live demo") subtly pull toward the cursor (desktop pointer only).
+- **Navbar:** hides on scroll down, shows on scroll up; background blur increases after scrolling.
+- **Micro-interactions:** hover/focus/press states on all interactive elements; focus rings always visible and styled.
+- **Theme toggle:** animated icon morph; theme switch uses a short color transition via CSS variables (no full-page flash).
+- **Konami-style easter egg is NOT required.** Do not add features beyond this spec.
+
+Reduced motion: if `prefers-reduced-motion: reduce` OR the Performance mode toggle is on, disable parallax, tilt, magnetic effect, custom cursor, smooth scroll, 3D, and looping animations (including the "Live" pulsing dot); keep simple opacity fades only. Implement this through one `useMotionPreference()` hook used everywhere.
+
+---
+
+## 9. CONTACT FORM
+
+- Fields: name, email, message. Client-side validation with inline accessible error messages (aria-describedby, aria-invalid), real-time validation on blur.
+- Submit behavior: build a `mailto:ommadure7@gmail.com` link with subject and body prefilled and open it. Also expose a `submitContact(data)` function in `/src/services/contact.ts` with a clear TODO comment so I can later plug in Formspree, EmailJS, or an API. Show loading, success, and error states.
+- Include a honeypot field to deter bots.
+- Also include copy-to-clipboard for the email address with a toast confirmation.
+
+---
+
+## 10. PERFORMANCE ARCHITECTURE (HARD REQUIREMENTS)
+
+Targets on a mid-range phone, production build: Lighthouse Performance ≥ 90, Accessibility ≥ 95, Best Practices ≥ 95, SEO ≥ 95; LCP < 2.5 s, CLS < 0.1, INP < 200 ms.
+
+- Route-level code splitting with `React.lazy`; 3D libs (three, r3f, drei) in a separate chunk loaded only when needed and after first paint (use `requestIdleCallback` with timeout fallback).
+- Configure Vite `manualChunks` to separate `react`, `framer-motion`, and `three` vendor chunks.
+- Import only what is used (named imports from drei and lucide-react; no wildcard imports).
+- No layout thrash: no `getBoundingClientRect` in scroll handlers without rAF throttling; use IntersectionObserver instead of scroll listeners wherever possible.
+- Memoize expensive components (`React.memo`, `useMemo`, `useCallback`) and keep context values stable; split contexts so a theme change does not re-render everything.
+- Pointer-move and scroll handlers: passive listeners, rAF-throttled, and writing to motion values/CSS variables, never to React state.
+- Images: all provided images lazy-loaded with explicit width/height or aspect-ratio, `loading="lazy"`, `decoding="async"`, WebP/AVIF where possible. Hero content must never wait on images.
+- Do NOT embed the live project sites in iframes anywhere (performance and security). Live demos open only via external links.
+- Fonts: preload the two critical font files, `font-display: swap`, subset to Latin.
+- Use `will-change` sparingly and only during active animation.
+- Avoid heavy blur layers stacked over large areas; limit `backdrop-filter` to navbar and small cards.
+- No console errors or warnings in production; no unused dependencies.
+
+---
+
+## 11. ACCESSIBILITY AND SEO
+
+- Semantic landmarks: `header`, `nav`, `main`, `section` (with aria-labelledby), `footer`. Single `h1`; logical heading order.
+- "Skip to content" link as first focusable element.
+- Full keyboard operability including the mobile drawer, command palette, project filters, and project cards. Focus trapping and restoration for dialogs.
+- All decorative 3D/canvas elements `aria-hidden="true"`; meaningful text alternatives for any informative visuals.
+- External links opening in a new tab must announce that to screen readers (visually hidden text or aria-label).
+- Respect `prefers-reduced-motion` and `prefers-color-scheme`.
+- SEO: unique `<title>` and meta description per route, Open Graph and Twitter card tags, canonical URL placeholder, JSON-LD `Person` schema with name, jobTitle, url, sameAs (GitHub, LinkedIn), `robots.txt`, and `sitemap.xml` generated from projects data (use a build-time script or a clearly documented static file).
+- Language attribute `lang="en"`.
+
+---
+
+## 12. PLACEHOLDER AND NO-HALLUCINATION RULES
+
+- Use ONLY the content in Section 3. Do not add extra projects, jobs, awards, testimonials, blog posts, years of experience, or numbers.
+- The ONLY live URLs allowed are the two given in Section 3 (HireMyTalent and ReviewPilot). Do not fabricate a URL for DevFlow, and do not guess any per-project GitHub repository URLs. Set `links.github` undefined for all three projects and render the quiet "Source link coming soon" badge on detail pages.
+- Screenshots: generate neutral, tasteful SVG/CSS placeholder images (gradient + project title + "Screenshot coming soon") from a single `PlaceholderImage` component. Each project's `images` array starts empty so the placeholder shows; replacing it with real image paths must work with no other code change.
+- Resume: create `/public/resume.pdf` as a tiny placeholder file and mention in the README that I should replace it with my real resume.
+- Do not write fake metrics for the portfolio itself (visitor counts, etc.).
+- Do not add analytics, tracking scripts, cookie banners, or any third-party network calls other than Google Fonts (if used).
+- Do not call or health-check the live project URLs from the app; they are plain links.
+
+---
+
+## 13. CODE QUALITY AND FOLDER STRUCTURE
+
+```
+src/
+  main.tsx, App.tsx, router.tsx
+  assets/            (fonts, static svg)
+  components/
+    layout/          (Navbar, Footer, MobileDrawer, ScrollProgress, CustomCursor)
+    sections/        (Hero, About, Skills, Experience, Projects, Contact)
+    ui/              (Button, Chip, Card, Toast, Dialog, MagneticButton, PlaceholderImage, SectionHeading, DeploymentLink)
+    three/           (HeroScene, SkillSphere, ContactObject, CanvasGuard, StaticFallback)
+    command/         (CommandPalette)
+  pages/             (Home, ProjectDetail, NotFound)
+  data/              (see Section 5)
+  config/            (theme.ts, features.ts)
+  hooks/             (useMotionPreference, useInView, useTheme, useMediaQuery, useScrollSpy, useReducedData)
+  animations/        (variants.ts)
+  services/          (contact.ts)
+  context/           (ThemeContext, UIContext)
+  types/             (index.ts)
+  utils/             (cn.ts, format.ts, url.ts)
+```
+
+- `DeploymentLink` is the single shared component implementing the "Deployment link behavior" in Section 4; cards and detail pages both use it.
+- TypeScript strict, no `any`. ESLint + Prettier configured. Small, single-responsibility components (<200 lines each).
+- Every interactive component documented with a short JSDoc comment.
+- Add Error Boundaries at route level and around 3D.
+- Write a clear `README.md` for the portfolio itself (project name "Portfolio_fullstack"): setup, scripts, folder map, how to customize (Section 5), how to add DevFlow's live URL later, performance notes, and deployment steps for Replit and Vercel.
+
+---
+
+## 14. ACCEPTANCE CHECKLIST (VERIFY BEFORE FINISHING)
+
+- [ ] All three projects render from `projects.ts` only; adding a 4th object auto-creates card, filter chip, detail page, palette entry.
+- [ ] HireMyTalent shows a working "Live demo" button to https://actors.hiremytalent.in and ReviewPilot to https://reviewpilot-om.vercel.app, both opening in a new tab with `rel="noopener noreferrer"`.
+- [ ] DevFlow shows the quiet "Deployment coming soon" badge in the same spot, and adding a `links.live` value turns it into a Live demo button with no other change (test this once, then revert).
+- [ ] Hero 3D loads lazily and falls back gracefully (test by toggling Performance mode and by disabling WebGL).
+- [ ] No horizontal scroll at 360px width.
+- [ ] Keyboard-only navigation works across the entire site, including Ctrl/Cmd+K.
+- [ ] Reduced-motion and Performance mode disable heavy effects.
+- [ ] Production build succeeds with no TypeScript or ESLint errors; no console errors.
+- [ ] Three.js chunk is not part of the initial bundle (verify in the build output).
+- [ ] Resume, GitHub, LinkedIn, email, and "View source" links work.
+- [ ] README explains every customization point.
+- [ ] Code is pushed to GitHub per Section 15 and the push is verified.
+
+---
+
+## 15. SOURCE CODE: PUSH THE PROJECT TO GITHUB (DO THIS LAST, AFTER THE BUILD PASSES)
+
+Target repository (already created by me, public or private, currently may contain only a README):
+`https://github.com/Ommadure/Portfolio_fullstack.git`, branch `main`.
+
+Steps:
+1. Before committing, create a proper `.gitignore` containing at least: `node_modules`, `dist`, `.env`, `.env.*`, `.replit` runtime caches such as `.cache`, `.upm`, `.local`, logs, and OS files (`.DS_Store`). Never commit secrets, tokens, or API keys. If any secret exists in the project, remove it from the code first.
+2. Make sure `README.md` is the detailed portfolio README from Section 13 (not a one-line placeholder).
+3. Run these commands in the Shell, adapting only if git is already initialized:
+
+```
+git init
+git add .
+git commit -m "feat: interactive developer portfolio"
+git branch -M main
+git remote add origin https://github.com/Ommadure/Portfolio_fullstack.git
+git push -u origin main
+```
+
+(If a remote named `origin` already exists, use `git remote set-url origin https://github.com/Ommadure/Portfolio_fullstack.git` instead of `git remote add`.)
+
+4. Handling a rejected push: the remote `main` may already contain an earlier "first commit" with only a README.md. If the push is rejected as non-fast-forward, run `git pull origin main --rebase --allow-unrelated-histories`. If there is a conflict in `README.md`, KEEP MY LOCAL detailed README. Then push again. NEVER use `git push --force` or `--force-with-lease` and never delete the remote repository.
+5. Authentication: do not invent, hardcode, or print tokens or passwords, and do not write credentials into any file or into the remote URL. Use Replit's connected GitHub integration or the Git pane if it is available. If authentication fails or the push cannot be completed for any reason, do NOT loop or retry endlessly: stop, leave the local commit in place, and report to me (a) the exact error message, and (b) the exact remaining commands I should run myself.
+6. Verify success by running `git status` and `git log --oneline -n 3` and `git ls-remote origin main`, and confirm the remote `main` head matches the local head. Report the repository URL and the commit hash.
+7. Do not push any branch other than `main`.
+
+---
+
+Build the complete project now, run it, fix any errors, and then perform Section 15. Report completion with: a one-paragraph summary, the result of the acceptance checklist, and the GitHub push result.
