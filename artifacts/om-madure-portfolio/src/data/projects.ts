@@ -10,8 +10,7 @@ export const projects: Project[] = [
       'Structured frontend state with Redux Toolkit and connected the UI to PostgreSQL-backed application services while maintaining clear separation between presentation and data concerns.',
       'Implemented AI-assisted product workflows with streaming Server-Sent Events and provider-backed APIs, including frontend handling for progressive responses and client disconnects.',
     ],
-    // TODO: add live URL here once DevFlow is deployed
-    links: {}, images: [], featured: true, accentColor: '#63e9ed',
+    links: { live: 'https://devflow-om.vercel.app' }, images: ['/screenshots/devflow_screenshot.png'], featured: true, accentColor: '#63e9ed',
   },
   {
     slug: 'reviewpilot', title: 'ReviewPilot', subtitle: 'AI-Powered GitHub Pull Request Review Platform',
@@ -22,7 +21,7 @@ export const projects: Project[] = [
       'Designed frontend handling for asynchronous review processing, loading states, validation feedback, and long-running AI-generated results.',
       'Supported a review engine evaluated against 31 labeled pull requests, with production review latency targeted below 60 seconds.',
     ],
-    links: { live: 'https://reviewpilot-om.vercel.app' }, images: [], featured: true, accentColor: '#a88cff',
+    links: { live: 'https://reviewpilot-om.vercel.app' }, images: ['/screenshots/reviewpilot_screenshot.png'], featured: true, accentColor: '#a88cff',
   },
   {
     slug: 'hiremytalent', title: 'HireMyTalent', subtitle: 'Actors Booking Marketplace',
@@ -34,6 +33,6 @@ export const projects: Project[] = [
       'Implemented PostgreSQL-backed full-text search with faceted filters and cursor-based pagination through API integrations, enabling scalable talent discovery.',
       'Built role-aware navigation and protected application flows using JWT/email-verification state while maintaining consistent responsive UI behavior.',
     ],
-    links: { live: 'https://actors.hiremytalent.in' }, images: [], featured: true, accentColor: '#80d9b4',
+    links: { live: 'https://actors.hiremytalent.in' }, images: ['/screenshots/HireMyTalent_Screenshot.png'], featured: true, accentColor: '#80d9b4',
   },
 ];
